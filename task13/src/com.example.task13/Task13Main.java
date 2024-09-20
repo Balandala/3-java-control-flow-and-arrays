@@ -1,5 +1,7 @@
 package com.example.task13;
 
+import java.util.Objects;
+
 public class Task13Main {
     public static void main(String[] args) {
         //здесь вы можете вручную протестировать ваше решение, вызывая реализуемый метод и смотря результат
@@ -12,8 +14,23 @@ public class Task13Main {
     }
 
     static int[] removeMoreThen1000(int[] arr) {
-        //todo напишите здесь свою корректную реализацию этого метода, вместо существующей
-        return  null;
+        if (!Objects.isNull(arr)) {
+            int amountOfBigNumbers = 0;
+            for (int num : arr) {
+                if (num > 1000)
+                    amountOfBigNumbers++;
+            }
+            int[]newArr = new int[arr.length-amountOfBigNumbers];
+            int j = 0;
+            for (int element : arr) {
+                if (element <= 1000) {
+                    newArr[j] = element;
+                    j++;
+                }
+            }
+            return newArr;
+        }
+        return arr;
     }
-
 }
+
