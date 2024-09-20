@@ -10,6 +10,17 @@ public class Task02Main {
     }
 
     static String getSeason(int monthNumber) {
-        return "";//todo напишите здесь свою корректную реализацию этого метода, вместо существующей
+        switch ((monthNumber % 12) / 3) {
+            case (0):
+                return "зима";
+            case (1):
+                return "весна";
+            case (2):
+                return "лето";
+            case (3):
+                return "осень";
+            default:
+                return "";
+        }
     }
 }
